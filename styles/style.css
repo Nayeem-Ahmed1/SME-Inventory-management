@@ -15,7 +15,6 @@ body {
   width: 35%;
   box-sizing: border-box;
   margin: auto;
-  /* box-shadow: 5px 5px 10px #c4c8ca; */
   border: 2px solid white;
   border-radius: 3%;
   display: flex;
@@ -61,6 +60,7 @@ body {
   padding-bottom: 5px;
 }
 
+
 .login_card input{
   outline: none;
   padding: 1px;
@@ -70,10 +70,11 @@ body {
   border-top: none;
   border-left: none;
   border-right: none;
+  font-family: "Roboto Mono", monospace;
 }
 
 .login_card input:focus{
   border-bottom: 3px solid #343435;
   transform: scaleX(1.06);
-  transition-duration: 0.3s;
+  transition-duration: 0.4s;
 }
