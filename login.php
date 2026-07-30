@@ -9,7 +9,7 @@
         <h2>Login</h2>
         <form action="" method="post">
           <div class="email_container">
-            <Label for="email">EMAIL :</Label>
+            <Label for="email">EMAIL:</Label>
             <input id="email" type="text"/>
           </div>
           <div class="password_container">
