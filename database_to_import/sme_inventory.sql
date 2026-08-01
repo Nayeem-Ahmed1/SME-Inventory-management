@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3308
--- Generation Time: Jul 28, 2026 at 07:28 PM
+-- Generation Time: Aug 01, 2026 at 11:28 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -142,6 +142,13 @@ CREATE TABLE `roles` (
   `created_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `roles`
+--
+
+INSERT INTO `roles` (`role_id`, `role_name`, `created_at`) VALUES
+(1, 'admin', '2026-08-01 19:56:35');
+
 -- --------------------------------------------------------
 
 --
@@ -233,6 +240,13 @@ CREATE TABLE `users` (
   `user_status` enum('active','inactive') DEFAULT 'active',
   `created_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`user_id`, `role_id`, `full_name`, `profile_picture`, `phone`, `email`, `user_password`, `user_status`, `created_at`) VALUES
+(1, 1, 'Eren Yeager', NULL, '1711111111', 'admin@admin.com', '$2y$10$tBQ7ZH1uP//NzGgo7SRdG.jTfs/uEDcaTbudoha4aNmRs3LHo9tsu', 'active', '2026-08-01 20:00:16');
 
 -- --------------------------------------------------------
 
@@ -442,7 +456,7 @@ ALTER TABLE `purchase_orders`
 -- AUTO_INCREMENT for table `roles`
 --
 ALTER TABLE `roles`
-  MODIFY `role_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `role_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `sales_items`
@@ -478,7 +492,7 @@ ALTER TABLE `units`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `warehouses`

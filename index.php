@@ -2,7 +2,7 @@
 
 session_start();
 
-$continue = isset($_SESSION['user_id']);
+$continue = !empty($_SESSION['user_id']);
 
 if($continue){
     header('Location: dashboard.php');
