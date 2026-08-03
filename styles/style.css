@@ -92,19 +92,19 @@ body {
 
 /* for dashboard page */
 
-.dashboard_container .nav {
+.dashboard_container nav {
   grid-area: nv;
-  background-color: blue;
+  background-color: #ffffff;
 }
 
-.dashboard_container .sidebar {
+.dashboard_container aside {
   grid-area: sd;
-  background-color: brown;
+  background-color: #2b2434;
 }
 
 .dashboard_container .main {
   grid-area: ma;
-  background-color: darkgreen;
+  background-color: #edf3fc;
 }
 
 .dashboard_container {
@@ -115,4 +115,33 @@ body {
     "nv nv"
     "sd ma";
   height: 100vh;
+}
+
+.dashboard_container aside {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.dashboard_container aside .item {
+  height: 2.2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.9rem;
+  color: #d1d5db;
+  padding-left: 15%;
+  padding-right: 10%;
+  border-radius: 10%;
+  transition-duration: 0.1s;
+}
+
+.dashboard_container aside .item:hover {
+  background-color: #3a3246;
+  font-weight: bold;
+  border-left: 5px solid #2563eb;
+}
+
+.dashboard_container aside a {
+  text-decoration: none;
 }
