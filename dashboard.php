@@ -7,11 +7,11 @@
   include __DIR__ . '/views/header.php';
 ?>
 
-  This is dashboard <br><br>
-
-  <?php 
-  var_dump($_SESSION);
-   ?>
+  <div class="dashboard_container">
+    <div class="nav"></div>
+    <div class="sidebar"></div>
+    <div class="main"></div>
+  </div>
 
 </body>
 </html>

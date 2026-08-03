@@ -1,7 +1,12 @@
 body {
-  background-color: #b1aab6;
+  background-color: #685c79;
   font-family: "Roboto Mono", monospace;
+  box-sizing: border-box;
+  margin: 0;
+  border: 0;
 }
+
+/* For Login Page */
 
 .outer_container_login {
   display: flex;
@@ -83,4 +88,31 @@ body {
   margin-top: -1.5rem;
   color: red;
   font-weight: bold;
+}
+
+/* for dashboard page */
+
+.dashboard_container .nav {
+  grid-area: nv;
+  background-color: blue;
+}
+
+.dashboard_container .sidebar {
+  grid-area: sd;
+  background-color: brown;
+}
+
+.dashboard_container .main {
+  grid-area: ma;
+  background-color: darkgreen;
+}
+
+.dashboard_container {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  grid-template-rows: 70px 1fr;
+  grid-template-areas:
+    "nv nv"
+    "sd ma";
+  height: 100vh;
 }
