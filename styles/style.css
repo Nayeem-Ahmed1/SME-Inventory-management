@@ -260,3 +260,345 @@ body {
   transition-duration: 0.8s;
   border-radius: 9%;
 }
+
+/* Admins submenu */
+
+.dashboard_container .admin_drop_container {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  background-color: white;
+  left: 12%;
+  top: 15%;
+  padding: 10px;
+  justify-content: center;
+  gap: 0.7rem;
+}
+
+.dashboard_container .admin_drop_container .item {
+  display: flex;
+  gap: 0.8rem;
+  align-items: center;
+}
+
+.dashboard_container .admin_drop_container .item:hover {
+  background-color: #b8b9b9;
+  border-radius: 10%;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.dashboard_container .admin_drop_container .item i {
+  font-size: 0.7rem;
+}
+
+.dashboard_container .admin_drop_container a {
+  text-decoration: none;
+  color: #3a3246;
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+/* Employee submenu */
+
+.dashboard_container .emp_drop_container {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  background-color: white;
+  left: 12%;
+  top: 22%;
+  padding: 10px;
+  justify-content: center;
+  gap: 0.7rem;
+}
+
+.dashboard_container .emp_drop_container .item {
+  display: flex;
+  gap: 0.8rem;
+  align-items: center;
+}
+
+.dashboard_container .emp_drop_container .item:hover {
+  background-color: #b8b9b9;
+  border-radius: 10%;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.dashboard_container .emp_drop_container .item i {
+  font-size: 0.7rem;
+}
+
+.dashboard_container .emp_drop_container a {
+  text-decoration: none;
+  color: #3a3246;
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+/* suppliers submenu */
+
+.dashboard_container .sup_drop_container {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  background-color: white;
+  left: 12%;
+  top: 28%;
+  padding: 10px;
+  justify-content: center;
+  gap: 0.7rem;
+}
+
+.dashboard_container .sup_drop_container .item {
+  display: flex;
+  gap: 0.8rem;
+  align-items: center;
+}
+
+.dashboard_container .sup_drop_container .item:hover {
+  background-color: #b8b9b9;
+  border-radius: 10%;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.dashboard_container .sup_drop_container .item i {
+  font-size: 0.7rem;
+}
+
+.dashboard_container .sup_drop_container a {
+  text-decoration: none;
+  color: #3a3246;
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+/* Products submenu */
+
+.dashboard_container .prod_drop_container {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  background-color: white;
+  left: 12%;
+  top: 34%;
+  padding: 10px;
+  justify-content: center;
+  gap: 0.7rem;
+}
+
+.dashboard_container .prod_drop_container .item {
+  display: flex;
+  gap: 0.8rem;
+  align-items: center;
+}
+
+.dashboard_container .prod_drop_container .item:hover {
+  background-color: #b8b9b9;
+  border-radius: 10%;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.dashboard_container .prod_drop_container .item i {
+  font-size: 0.7rem;
+}
+
+.dashboard_container .prod_drop_container a {
+  text-decoration: none;
+  color: #3a3246;
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+/* purchases submenu */
+
+.dashboard_container .pur_drop_container {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  background-color: white;
+  left: 12%;
+  top: 42%;
+  padding: 10px;
+  justify-content: center;
+  gap: 0.7rem;
+}
+
+.dashboard_container .pur_drop_container .item {
+  display: flex;
+  gap: 0.8rem;
+  align-items: center;
+}
+
+.dashboard_container .pur_drop_container .item:hover {
+  background-color: #b8b9b9;
+  border-radius: 10%;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.dashboard_container .pur_drop_container .item i {
+  font-size: 0.7rem;
+}
+
+.dashboard_container .pur_drop_container a {
+  text-decoration: none;
+  color: #3a3246;
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+/* Sales submenu */
+
+.dashboard_container .sale_drop_container {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  background-color: white;
+  left: 12%;
+  top: 47%;
+  padding: 10px;
+  justify-content: center;
+  gap: 0.7rem;
+}
+
+.dashboard_container .sale_drop_container .item {
+  display: flex;
+  gap: 0.8rem;
+  align-items: center;
+}
+
+.dashboard_container .sale_drop_container .item:hover {
+  background-color: #b8b9b9;
+  border-radius: 10%;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.dashboard_container .sale_drop_container .item i {
+  font-size: 0.7rem;
+}
+
+.dashboard_container .sale_drop_container a {
+  text-decoration: none;
+  color: #3a3246;
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+/* Warehouse Submenu */
+
+.dashboard_container .wh_drop_container {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  background-color: white;
+  left: 12%;
+  top: 54%;
+  padding: 10px;
+  justify-content: center;
+  gap: 0.7rem;
+}
+
+.dashboard_container .wh_drop_container .item {
+  display: flex;
+  gap: 0.8rem;
+  align-items: center;
+}
+
+.dashboard_container .wh_drop_container .item:hover {
+  background-color: #b8b9b9;
+  border-radius: 10%;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.dashboard_container .wh_drop_container .item i {
+  font-size: 0.7rem;
+}
+
+.dashboard_container .wh_drop_container a {
+  text-decoration: none;
+  color: #3a3246;
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+/* Inventory submenu */
+
+.dashboard_container .inv_drop_container {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  background-color: white;
+  left: 12%;
+  top: 61%;
+  padding: 10px;
+  justify-content: center;
+  gap: 0.7rem;
+}
+
+.dashboard_container .inv_drop_container .item {
+  display: flex;
+  gap: 0.8rem;
+  align-items: center;
+}
+
+.dashboard_container .inv_drop_container .item:hover {
+  background-color: #b8b9b9;
+  border-radius: 10%;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.dashboard_container .inv_drop_container .item i {
+  font-size: 0.7rem;
+}
+
+.dashboard_container .inv_drop_container a {
+  text-decoration: none;
+  color: #3a3246;
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+/* Customer Submenu */
+
+.dashboard_container .cust_drop_container {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  background-color: white;
+  left: 12%;
+  top: 67%;
+  padding: 10px;
+  justify-content: center;
+  gap: 0.7rem;
+}
+
+.dashboard_container .cust_drop_container .item {
+  display: flex;
+  gap: 0.8rem;
+  align-items: center;
+}
+
+.dashboard_container .cust_drop_container .item:hover {
+  background-color: #b8b9b9;
+  border-radius: 10%;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.dashboard_container .cust_drop_container .item i {
+  font-size: 0.7rem;
+}
+
+.dashboard_container .cust_drop_container a {
+  text-decoration: none;
+  color: #3a3246;
+  font-size: 0.9rem;
+  font-weight: bold;
+}

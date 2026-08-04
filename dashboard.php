@@ -10,6 +10,12 @@
   if(empty($_SESSION['active_sidebar'])){
     $_SESSION['active_sidebar'] = 'Dashboard';
   }
+  
+  if(!empty($_GET['aside']) && $_GET['aside'] != NULL){
+    $_SESSION['active_sidebar'] = $_GET['aside'];
+  } else {
+    $_SESSION['active_sidebar'] = 'Dashboard';
+  }
 ?>
 
 <?php 
@@ -44,18 +50,27 @@
 
     <aside>
       <?php foreach($keys AS $key) : ?>
-      <a href="">
-        <div class="item <?php echo $_SESSION['active_sidebar'] === $key ? 'active' : ''; ?>">
+      <a href="<?= !empty($_GET['aside']) && $_GET['aside'] === $key ? 'dashboard.php' : '?aside=' . $key ; ?>">
+        <div class="item <?= $_SESSION['active_sidebar'] === $key ? 'active' : ''; ?>">
           <div>
-            <i class="<?php echo $sidebarArr[$key] ?>"></i>
-            <?php echo $key ?>
+            <i class="<?= $sidebarArr[$key]; ?>"></i>
+            <?= $key; ?>
           </div>
           <span>></span> 
         </div>
       </a>
       <?php endforeach; ?>
     </aside>
-
+    
+    <?php include __DIR__ . '/inc/admin_drop_down.inc.php' ?>
+    <?php include __DIR__ . '/inc/emp_drop_down.inc.php' ?>
+    <?php include __DIR__ . '/inc/supplier_drop_drown.inc.php' ?>
+    <?php include __DIR__ . '/inc/prod_drop_down.inc.php' ?>
+    <?php include __DIR__ . '/inc/purchase_drop_down.inc.php' ?>
+    <?php include __DIR__ . '/inc/sale_drop_down.inc.php' ?>
+    <?php include __DIR__ . '/inc/warehouse_drop_down.inc.php' ?>
+    <?php include __DIR__ . '/inc/inv_drop_down.inc.php' ?>
+    <?php include __DIR__ . '/inc/cust_drop_down.inc.php' ?>
 
     <div class="main">
         Dashboard Data
