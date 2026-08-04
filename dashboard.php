@@ -5,6 +5,11 @@
   $title = 'Dashboard';
 
   include __DIR__ . '/views/header.php';
+  include __DIR__ . '/config/db.config.php';
+
+  if(empty($_SESSION['active_sidebar'])){
+    $_SESSION['active_sidebar'] = 'Dashboard';
+  }
 ?>
 
 <?php 
@@ -25,14 +30,22 @@
     'Brands' => 'fa-brands fa-gg-circle'];
 
   $keys = array_keys($sidebarArr);
+
 ?>
 
   <div class="dashboard_container">
-    <nav></nav>
+
+
+    <nav>
+      <?php include __DIR__ . '/inc/navbar.inc.php' ?>
+      <?php include __DIR__ . '/inc/nav_drop_down.inc.php' ?>
+    </nav>
+
+
     <aside>
       <?php foreach($keys AS $key) : ?>
       <a href="">
-        <div class="item">
+        <div class="item <?php echo $_SESSION['active_sidebar'] === $key ? 'active' : ''; ?>">
           <div>
             <i class="<?php echo $sidebarArr[$key] ?>"></i>
             <?php echo $key ?>
@@ -42,10 +55,13 @@
       </a>
       <?php endforeach; ?>
     </aside>
-    <div class="main">
 
+
+    <div class="main">
+        Dashboard Data
     </div>
   </div>
+
 
 </body>
 </html>
