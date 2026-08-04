@@ -148,6 +148,11 @@ body {
   text-decoration: none;
 }
 
+.dashboard_container .empty_space {
+  background-color: #2b2434;
+  height: 18%;
+}
+
 .dashboard_container aside .active {
   background-color: #3a3246;
   font-weight: bold;
@@ -269,7 +274,7 @@ body {
   position: absolute;
   background-color: white;
   left: 12%;
-  top: 15%;
+  top: 14%;
   padding: 10px;
   justify-content: center;
   gap: 0.7rem;
@@ -307,7 +312,7 @@ body {
   position: absolute;
   background-color: white;
   left: 12%;
-  top: 22%;
+  top: 20%;
   padding: 10px;
   justify-content: center;
   gap: 0.7rem;
@@ -345,7 +350,7 @@ body {
   position: absolute;
   background-color: white;
   left: 12%;
-  top: 28%;
+  top: 26%;
   padding: 10px;
   justify-content: center;
   gap: 0.7rem;
@@ -383,7 +388,7 @@ body {
   position: absolute;
   background-color: white;
   left: 12%;
-  top: 34%;
+  top: 32%;
   padding: 10px;
   justify-content: center;
   gap: 0.7rem;
@@ -421,7 +426,7 @@ body {
   position: absolute;
   background-color: white;
   left: 12%;
-  top: 42%;
+  top: 38%;
   padding: 10px;
   justify-content: center;
   gap: 0.7rem;
@@ -459,7 +464,7 @@ body {
   position: absolute;
   background-color: white;
   left: 12%;
-  top: 47%;
+  top: 44%;
   padding: 10px;
   justify-content: center;
   gap: 0.7rem;
@@ -497,7 +502,7 @@ body {
   position: absolute;
   background-color: white;
   left: 12%;
-  top: 54%;
+  top: 50%;
   padding: 10px;
   justify-content: center;
   gap: 0.7rem;
@@ -535,7 +540,7 @@ body {
   position: absolute;
   background-color: white;
   left: 12%;
-  top: 61%;
+  top: 56%;
   padding: 10px;
   justify-content: center;
   gap: 0.7rem;
@@ -573,7 +578,7 @@ body {
   position: absolute;
   background-color: white;
   left: 12%;
-  top: 67%;
+  top: 62%;
   padding: 10px;
   justify-content: center;
   gap: 0.7rem;

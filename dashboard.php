@@ -30,10 +30,9 @@
     'Warehouse' => 'fa-solid fa-warehouse',
     'Inventory' => 'fa-regular fa-house',
     'Customers' => 'fa-solid fa-user',
-    'Catagories' => 'fa-solid fa-table-list',
     'Roles' => 'fa-solid fa-user-gear',
-    'Units' => 'fa-solid fa-angle-up',
-    'Brands' => 'fa-brands fa-gg-circle'];
+    'Log Out' => 'fa-solid fa-arrow-right-from-bracket'
+  ];
 
   $keys = array_keys($sidebarArr);
 
@@ -60,6 +59,8 @@
         </div>
       </a>
       <?php endforeach; ?>
+      <div class="empty_space"> 
+      </div>
     </aside>
     
     <?php include __DIR__ . '/inc/admin_drop_down.inc.php' ?>
