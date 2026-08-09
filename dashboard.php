@@ -16,6 +16,11 @@
   } else {
     $_SESSION['active_sidebar'] = 'Dashboard';
   }
+
+  if(!empty($_GET['aside']) && $_GET['aside'] === 'Log Out'){
+    header('Location: logout.php');
+    die();
+  }
 ?>
 
 <?php 
