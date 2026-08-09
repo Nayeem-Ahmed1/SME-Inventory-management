@@ -1,0 +1,60 @@
+@media screen and (min-width: 1200px) and (max-width: 1500px) {
+  .login_card form {
+    width: 57%;
+  }
+
+  .dashboard_container .nav_drop_container {
+    padding: 10px;
+    background-color: white;
+    top: 8%;
+  }
+
+  .dashboard_container .nav_drop_container a {
+    font-size: 0.9rem;
+  }
+
+  .dashboard_container .admin_drop_container {
+    left: 15%;
+    top: 15%;
+  }
+
+  .dashboard_container .emp_drop_container {
+    left: 15%;
+    top: 21%;
+  }
+
+  .dashboard_container .sup_drop_container {
+    left: 15%;
+    top: 27%;
+  }
+
+  .dashboard_container .prod_drop_container {
+    left: 15%;
+    top: 33%;
+  }
+
+  .dashboard_container .pur_drop_container {
+    left: 15%;
+    top: 39%;
+  }
+
+  .dashboard_container .sale_drop_container {
+    left: 15%;
+    top: 45%;
+  }
+
+  .dashboard_container .wh_drop_container {
+    left: 15%;
+    top: 51%;
+  }
+
+  .dashboard_container .inv_drop_container {
+    left: 15%;
+    top: 57%;
+  }
+
+  .dashboard_container .cust_drop_container {
+    left: 15%;
+    top: 63%;
+  }
+}
