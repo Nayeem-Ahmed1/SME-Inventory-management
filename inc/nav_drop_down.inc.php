@@ -1,21 +1,31 @@
 <?php 
   if(!empty($_GET['nav']) && $_GET['nav'] === 'drop_click') :
 
-    $drop_down_arr = [
-        'Profile' => 'fa-solid fa-circle-user',
-        'Edit Profile' => 'fa-solid fa-user-gear',
-        'Sign Out' => 'fa-solid fa-arrow-right-from-bracket'
+    $drop_down_items = [
+      [
+        'label' => 'Profile',
+        'icon' => 'fa-solid fa-circle-user',
+        'url' => 'profile.php'
+      ],
+      [
+        'label' => 'Edit Profile',
+        'icon' => 'fa-solid fa-user-gear',
+        'url' => 'edit_profile.php' 
+      ],
+      [
+        'label' => 'Sign Out',
+        'icon' => 'fa-solid fa-arrow-right-from-bracket',
+        'url' => 'logout.php'
+      ]
     ];
-
-    $drop_down_arr_Keys = array_keys($drop_down_arr);
 ?>
 
 <div class="nav_drop_container">
-    <?php foreach($drop_down_arr_Keys AS $key) :?>
-      <a href="<?= $key === 'Sign Out' ? 'logout.php' : ''; ?>">
+    <?php foreach($drop_down_items AS $item) :?>
+      <a href="<?= $item['url']; ?>">
         <div class="item">
-            <i class="<?= $drop_down_arr[$key] ?>"></i>
-            <?= $key; ?>
+            <i class="<?= $item['icon'] ?>"></i>
+            <?= $item['label']; ?>
         </div>
       </a>
       <?php endforeach; ?>

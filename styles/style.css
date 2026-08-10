@@ -607,3 +607,100 @@ body {
   font-size: 0.9rem;
   font-weight: bold;
 }
+
+/* Profile-Page */
+
+.profile_container {
+  background-color: #edf3fc;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10rem;
+}
+
+.profile_container .left_side {
+  width: 20%;
+  height: 40%;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  box-shadow: 10px 10px 20px rgb(190, 190, 255);
+}
+
+.profile_container .right_side {
+  width: 50%;
+  height: 60%;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.profile_container .left_side .top {
+  width: 55%;
+  height: 55%;
+  border-radius: 20%;
+}
+
+.profile_container .left_side .top img {
+  width: 100%;
+  object-fit: cover;
+  height: 100%;
+  border-radius: 20%;
+}
+
+.profile_container .right_side .top {
+  width: 90%;
+  height: 35%;
+}
+
+.profile_container .right_side .bottom {
+  width: 90%;
+  height: 35%;
+}
+
+.profile_container .back_to_dashboard {
+  position: absolute;
+  top: 5%;
+  left: 11%;
+  text-decoration: none;
+  background-color: #2563eb;
+  color: white;
+  font-weight: bold;
+  padding: 10px;
+  border-radius: 5%;
+  transition-duration: 0.3s;
+}
+
+.profile_container .back_to_dashboard:hover {
+  background-color: #487ff5;
+  transform: scaleX(0.9);
+}
+
+.profile_container .right_side .bottom div {
+  display: flex;
+  justify-content: right;
+  margin-right: 6%;
+}
+
+.profile_container .edit_option {
+  text-decoration: none;
+  background-color: #294e9e;
+  color: white;
+  font-weight: bold;
+  padding: 10px;
+  border-radius: 5%;
+  transition-duration: 0.3s;
+  display: inline-block;
+}
+
+.profile_container .edit_option:hover {
+  background-color: #487ff5;
+  transform: scalex(0.9);
+}
