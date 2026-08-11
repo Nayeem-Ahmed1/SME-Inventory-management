@@ -57,4 +57,14 @@
     left: 15%;
     top: 63%;
   }
+
+  .profile_container .right_side {
+    width: 50%;
+    height: 72%;
+  }
+  .edit_profile_container .edit_card {
+    height: 80%;
+    width: 45%;
+    gap: 0.6rem;
+  }
 }
