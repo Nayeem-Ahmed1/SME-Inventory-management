@@ -640,6 +640,7 @@ body {
   justify-content: center;
   align-items: center;
   gap: 2rem;
+  border-radius: 10%;
 }
 
 .profile_container .left_side .top {
@@ -703,4 +704,106 @@ body {
 .profile_container .edit_option:hover {
   background-color: #487ff5;
   transform: scalex(0.9);
+}
+
+/* Edit Profile page */
+
+.edit_profile_container {
+  background-color: #edf3fc;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.edit_profile_container .edit_card {
+  background-color: white;
+  height: 80%;
+  width: 35%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  border-radius: 10%;
+}
+
+.edit_profile_container .edit_card .pp {
+  height: 25%;
+  width: 35%;
+}
+
+.edit_profile_container .edit_card .pp img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.edit_profile_container .edit_card .upload_pp input {
+  cursor: pointer;
+}
+
+.edit_profile_container .edit_card .edit_details {
+  width: 80%;
+  margin-top: 1rem;
+  margin-bottom: 4rem;
+}
+
+.edit_profile_container .edit_card .edit_details div {
+  display: flex;
+  width: 78%;
+  justify-content: space-between;
+}
+
+.edit_profile_container .edit_card .edit_details input {
+  outline: none;
+  padding: 1px;
+  font-size: medium;
+  width: 14rem;
+  border: 2px solid rgb(199, 198, 198);
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  font-family: "Roboto Mono", monospace;
+}
+
+.edit_profile_container .edit_card .edit_details input:focus {
+  border-bottom: 3px solid #343435;
+  transform: scaleX(1.06);
+  transition-duration: 0.4s;
+}
+
+.edit_profile_container .edit_card button {
+  padding: 8px;
+  margin-top: -5%;
+  margin-right: 28%;
+  background-color: #225ece;
+  color: white;
+  cursor: pointer;
+  border-radius: 10%;
+  border: 2px solid #286ae6;
+  align-self: flex-end;
+}
+
+.edit_profile_container .edit_card button:hover {
+  background-color: #3e7aeb;
+  font-weight: bold;
+}
+
+.edit_profile_container .back_to_dashboard {
+  position: absolute;
+  top: 5%;
+  left: 11%;
+  text-decoration: none;
+  background-color: #2563eb;
+  color: white;
+  font-weight: bold;
+  padding: 10px;
+  border-radius: 5%;
+  transition-duration: 0.3s;
+}
+
+.edit_profile_container .back_to_dashboard:hover {
+  background-color: #487ff5;
+  transform: scaleX(0.9);
 }

@@ -30,7 +30,7 @@
           <h4>Personal Details :</h4>
           <p>&emsp;&emsp; Full Name : <?= $result[0]['full_name'] ?></p>
           <p>&emsp;&emsp; Email : <?= $result[0]['email'] ?> </p>
-          <p>&emsp;&emsp; Phone : 0<?= $result[0]['phone'] ?></p>
+          <p>&emsp;&emsp; Phone : <?= $result[0]['phone'] ?></p>
       </div>
       <div class="bottom">
           <h4>Account Information :</h4>

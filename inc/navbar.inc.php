@@ -11,7 +11,7 @@
 
         $resultPhoto = dbQuery("SELECT profile_picture FROM users WHERE user_id = {$user_id}");
 
-        $resultPhoto[0]['profile_picture'] != NULL ? $pp = $resultPhoto : $pp = 'default.jpeg'; 
+        $resultPhoto[0]['profile_picture'] != NULL ? $pp = $resultPhoto[0]['profile_picture'] : $pp = 'default.jpeg'; 
         ?>
         
         <div class="image">
