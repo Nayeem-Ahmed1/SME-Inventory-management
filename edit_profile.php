@@ -31,7 +31,9 @@ if (!empty($_SESSION['user_id'])) :
 
     dbQuery($sql);
 
-    $_SESSION['full_name'] = $name;
+    if ($id === (int) $_SESSION['user_id']) {
+      $_SESSION['full_name'] = $name;
+    }
 
     if (!empty($password)) {
 
@@ -54,7 +56,7 @@ if (!empty($_SESSION['user_id'])) :
       dbQuery($sql);
     }
 
-    if (isset($_FILES['profile_picture']) && $_FILES['profile_picture']['error'] == 0) {
+    if (isset($_FILES['profile_picture']) && $_FILES['pp']['error'] === 0) {
 
       $file_name = 'pp_' . (string) time() . '.jpg';
 

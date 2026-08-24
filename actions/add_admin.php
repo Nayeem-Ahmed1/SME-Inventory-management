@@ -18,7 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
   $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
-  $sql = "INSERT INTO users(role_id,full_name,phone,email,user_password,user_status)VALUES({$role_id},'{$name}','{$phone}','{$email}','{$hashed_password}','active')";
+  $sql = "INSERT INTO users(role_id,full_name,phone,email,user_password,user_status) VALUES({$role_id},'{$name}','{$phone}','{$email}','{$hashed_password}','active')";
 
   dbQuery($sql);
 
@@ -27,7 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   if (!empty($new_user)) {
     $new_user_id = (int) $new_user[0]['user_id'];
 
-    if (isset($_FILES['pp'])) {
+    if (isset($_FILES['pp']) && $_FILES['pp']['error'] === 0) {
 
       $file_name = 'pp_' . time() . '.jpg';
       $new_path = __DIR__ . '/../uploads/' . $file_name;
