@@ -3,7 +3,7 @@ if (!empty($_GET['aside']) && $_GET['aside'] === 'Admins') :
 
   $admin_drop_down_arr = [
     'All Admins' => 'all_admins',
-    'Add New' => '',
+    'Add New' => 'add_new_admin',
     'Manage' => ''
   ];
 

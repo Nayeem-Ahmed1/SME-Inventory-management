@@ -79,11 +79,10 @@ if (!empty($_SESSION['user_id'])) :
     <?php include __DIR__ . '/inc/cust_drop_down.inc.php' ?>
 
     <div class="main">
-      <?php if (!empty($_GET['view']) && $_GET['view'] = 'all_admins')  include __DIR__ . '/views/all_admins.views.php' ?>
+      <?php if (!empty($_GET['view']) && $_GET['view'] == 'all_admins')  include __DIR__ . '/views/all_admins.views.php'; ?>
+      <?php if (!empty($_GET['view']) && $_GET['view'] == 'add_new_admin') include __DIR__  . '/views/add_new_admin.views.php'; ?>
     </div>
   </div>
-
-
   </body>
 
   </html>

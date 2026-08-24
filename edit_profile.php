@@ -47,14 +47,10 @@ if (!empty($_SESSION['user_id'])) :
       $status = $_POST['status'];
       $role_id = (int) $_POST['role'];
 
-      $sql = "UPDATE users
-              SET user_status = '{$status}'
-              WHERE user_id = {$id}";
+      $sql = "UPDATE users SET user_status = '{$status}' WHERE user_id = {$id}";
       dbQuery($sql);
 
-      $sql = "UPDATE users
-              SET role_id = {$role_id}
-              WHERE user_id = {$id}";
+      $sql = "UPDATE users SET role_id = {$role_id} WHERE user_id = {$id}";
       dbQuery($sql);
     }
 
@@ -120,9 +116,7 @@ if (!empty($_SESSION['user_id'])) :
 
             <?php foreach ($roles as $role) : ?>
 
-              <option
-                value="<?= $role['role_id'] ?>"
-                <?= $role['role_id'] == $result_cur[0]['role_id'] ? 'selected' : '' ?>>
+              <option value="<?= $role['role_id'] ?>" <?= $role['role_id'] == $result_cur[0]['role_id'] ?  'selected' : '' ?>>
                 <?= $role['role_name'] ?>
               </option>
 
