@@ -1,24 +1,27 @@
 <?php
-  if(!empty($_GET['aside']) && $_GET['aside'] === 'Admins') :
+if (!empty($_GET['aside']) && $_GET['aside'] === 'Admins') :
 
   $admin_drop_down_arr = [
-    'All Admins',
-    'Add New',
-    'Manage'
+    'All Admins' => 'all_admins',
+    'Add New' => '',
+    'Manage' => ''
   ];
+
+  $admin_drop_down_keys =  array_keys($admin_drop_down_arr);
 ?>
 
-<div class="admin_drop_container">
-  <?php foreach($admin_drop_down_arr AS $key) : ?>
-  <a href="">
-    <div class="item">
-      <i class="fa-solid fa-arrow-right"></i>
-      <div>
-        <?= $key; ?>
-      </div>
-    </div>
-  </a>
-  <?php endforeach; ?>
-</div>
+
+  <div class="admin_drop_container">
+    <?php foreach ($admin_drop_down_keys as $key) : ?>
+      <a href="dashboard.php?view=<?= $admin_drop_down_arr[$key] ?>">
+        <div class="item">
+          <i class="fa-solid fa-arrow-right"></i>
+          <div>
+            <?= $key; ?>
+          </div>
+        </div>
+      </a>
+    <?php endforeach; ?>
+  </div>
 
 <?php endif; ?>

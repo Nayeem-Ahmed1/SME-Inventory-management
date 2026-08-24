@@ -5,29 +5,28 @@
     <title>Emergency Admin</title>
 </head>
 
-<?php 
+<?php
 
 include __DIR__ . '/config/db.config.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
-  $name = trim($_POST['full_name'] ?? '');
-  $email = trim($_POST['email'] ?? '');
-  $password = $_POST['password'] ?? '';
+    $name = trim($_POST['full_name'] ?? '');
+    $email = trim($_POST['email'] ?? '');
+    $password = $_POST['password'] ?? '';
 
-  $hashedPassword = password_hash($password,PASSWORD_DEFAULT);
+    $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
-  $role_id = 1;
+    $role_id = 1;
 
-  $sql = "INSERT INTO users(role_id, full_name, email, user_password) VALUES (
+    $sql = "INSERT INTO users(role_id, full_name, email, user_password) VALUES (
                         {$role_id},
                         '{$name}',
                         '{$email}',
                         '{$hashedPassword}'
                     )";
 
-  dbQuery($sql);
-    
+    dbQuery($sql);
 }
 
 ?>
@@ -42,8 +41,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <input
             type="text"
             name="full_name"
-            required
-        >
+            required>
 
         <br><br>
 
@@ -51,8 +49,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <input
             type="email"
             name="email"
-            required
-        >
+            required>
 
         <br><br>
 
@@ -60,8 +57,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <input
             type="password"
             name="password"
-            required
-        >
+            required>
 
         <br><br>
 

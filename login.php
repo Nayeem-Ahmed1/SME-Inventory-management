@@ -18,7 +18,9 @@ if (!empty($_POST)) {
 
   $result_pass = dbQuery("SELECT user_password FROM users WHERE email = '{$email}'");
 
-  if (!empty($result_pass)) {
+  $result_stat = dbQuery("SELECT user_status FROM users WHERE email = '{$email}'");
+
+  if (!empty($result_pass) && $result_stat[0]['user_status'] === 'active') {
 
     $is_verified = password_verify($pass, $result_pass[0]['user_password']);
 
@@ -52,7 +54,7 @@ if (!empty($_POST)) {
       </div>
       <?php if ($wrong_creds) : ?>
         <div class="error_message">
-          Email or Password is incorrect!
+          Something Went Wrong
         </div>
       <?php endif ?>
       <button type="submit">LOGIN</button>

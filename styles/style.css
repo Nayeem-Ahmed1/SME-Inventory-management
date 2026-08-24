@@ -807,3 +807,47 @@ body {
   background-color: #487ff5;
   transform: scaleX(0.9);
 }
+
+.main .all_admins_container .admins_table_caption {
+  width: 100%;
+  font-size: large;
+  padding-top: 3rem;
+  padding-bottom: 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+.main .all_admins_container table {
+  width: 95%;
+  border-spacing: 1px;
+  background-color: white;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.main .all_admins_container td,
+.main .all_admins_container th {
+  text-align: center;
+  padding: 8px 20px;
+}
+
+tr:nth-child(odd) {
+  background-color: rgb(224, 224, 253);
+}
+
+.main .all_admins_container td a {
+  font-size: x-small;
+  background-color: #3e7aeb;
+  padding: 6px;
+  margin-left: 6px;
+  margin-right: 6px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 10%;
+  text-decoration: none;
+}
+
+.main .all_admins_container td .delete_button {
+  background-color: red;
+}
