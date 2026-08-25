@@ -1,6 +1,6 @@
-<div class="all_admins_container">
+<div class="all_container">
 
-  <div class="admins_table_caption">
+  <div class="table_caption">
     All Employees List
   </div>
 

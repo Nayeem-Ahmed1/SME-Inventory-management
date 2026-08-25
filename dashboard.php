@@ -83,6 +83,8 @@ if (!empty($_SESSION['user_id'])) :
       <?php if (!empty($_GET['view']) && $_GET['view'] == 'add_new_admin') include __DIR__  . '/views/add_new_admin.views.php'; ?>
       <?php if (!empty($_GET['view']) && $_GET['view'] == 'add_new_employee') include __DIR__ . '/views/add_new_employee.views.php'; ?>
       <?php if (!empty($_GET['view']) && $_GET['view'] == 'all_employees') include __DIR__ . '/views/all_employees.views.php'; ?>
+      <?php if (!empty($_GET['view']) && $_GET['view'] == 'all_suppliers') include __DIR__ . '/views/all_suppliers.views.php'; ?>
+      <?php if (!empty($_GET['view']) && $_GET['view'] == 'add_new_supplier') include __DIR__ . '/views/add_new_supplier.views.php'; ?>
     </div>
   </div>
   </body>

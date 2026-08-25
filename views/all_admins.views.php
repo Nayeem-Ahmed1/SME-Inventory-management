@@ -1,5 +1,5 @@
-<div class="all_admins_container">
-  <div class="admins_table_caption">
+<div class="all_container">
+  <div class="table_caption">
     All Admins List
   </div>
   <table>

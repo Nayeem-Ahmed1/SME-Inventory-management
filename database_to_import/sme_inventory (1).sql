@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3308
--- Generation Time: Aug 01, 2026 at 11:28 PM
+-- Generation Time: Aug 25, 2026 at 07:01 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -147,7 +147,8 @@ CREATE TABLE `roles` (
 --
 
 INSERT INTO `roles` (`role_id`, `role_name`, `created_at`) VALUES
-(1, 'admin', '2026-08-01 19:56:35');
+(1, 'admin', '2026-08-01 19:56:35'),
+(2, 'sales_manager', '2026-08-24 10:08:04');
 
 -- --------------------------------------------------------
 
@@ -196,6 +197,13 @@ CREATE TABLE `suppliers` (
   `payment_terms` varchar(25) DEFAULT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `suppliers`
+--
+
+INSERT INTO `suppliers` (`supplier_id`, `company_name`, `contact_person`, `phone`, `email`, `address`, `payment_terms`, `created_at`) VALUES
+(2, 'Metro Stationery Ltd.', 'Rahim Uddin', '01711111117', 'metro.stationery@gmail.com', 'Motijheel, Dhaka', 'Cash', '2026-08-25 16:55:57');
 
 -- --------------------------------------------------------
 
@@ -246,7 +254,11 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`user_id`, `role_id`, `full_name`, `profile_picture`, `phone`, `email`, `user_password`, `user_status`, `created_at`) VALUES
-(1, 1, 'Eren Yeager', NULL, '1711111111', 'admin@admin.com', '$2y$10$tBQ7ZH1uP//NzGgo7SRdG.jTfs/uEDcaTbudoha4aNmRs3LHo9tsu', 'active', '2026-08-01 20:00:16');
+(1, 1, 'Eren Yeager', NULL, '01711111111', 'admin@admin.com', '$2y$10$tBQ7ZH1uP//NzGgo7SRdG.jTfs/uEDcaTbudoha4aNmRs3LHo9tsu', 'active', '2026-08-01 20:00:16'),
+(6, 1, 'Nayeem Ahmed', NULL, '017111188', 'nabil97773@gmail.com', '$2y$10$L0gPHrfLUfqzuLZ0Z7UrDONiAp7Z1Wmh4i4Yxr3uy2m1Fm7yEuOC2', 'active', '2026-08-24 09:47:23'),
+(7, 1, 'tanviradmin', NULL, '017113424', 'tanvir@admin.com', '$2y$10$WNgyj34suBQO//AZFrMr8.1ylo/4TMdopmsbRO/jddrB0Fi4Y43v.', 'active', '2026-08-24 11:02:56'),
+(10, 1, 'Abir Hasan', 'pp_1787597487.jpg', '0171111100', 'abir@admin.com', '$2y$10$SJOyh3EGVRTwx5Xe9RTvR.eKEj.JczkcBCYSIbTwUUxi5vofyxyWK', 'active', '2026-08-24 18:51:27'),
+(12, 2, 'Abir Hossain', 'pp_1787672408.jpg', '0171134444', 'hossain@admin.com', '$2y$10$0NJ5qZyaCf2td1BQT3OYxevbA9prjqVHfuK6fMPJjIKhrfOGGd9pK', 'active', '2026-08-25 15:40:08');
 
 -- --------------------------------------------------------
 
@@ -456,7 +468,7 @@ ALTER TABLE `purchase_orders`
 -- AUTO_INCREMENT for table `roles`
 --
 ALTER TABLE `roles`
-  MODIFY `role_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `role_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `sales_items`
@@ -474,7 +486,7 @@ ALTER TABLE `sales_orders`
 -- AUTO_INCREMENT for table `suppliers`
 --
 ALTER TABLE `suppliers`
-  MODIFY `supplier_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `supplier_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `transfer_items`
@@ -492,7 +504,7 @@ ALTER TABLE `units`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `warehouses`
