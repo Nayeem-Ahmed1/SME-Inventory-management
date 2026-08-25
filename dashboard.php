@@ -85,6 +85,11 @@ if (!empty($_SESSION['user_id'])) :
       <?php if (!empty($_GET['view']) && $_GET['view'] == 'all_employees') include __DIR__ . '/views/all_employees.views.php'; ?>
       <?php if (!empty($_GET['view']) && $_GET['view'] == 'all_suppliers') include __DIR__ . '/views/all_suppliers.views.php'; ?>
       <?php if (!empty($_GET['view']) && $_GET['view'] == 'add_new_supplier') include __DIR__ . '/views/add_new_supplier.views.php'; ?>
+      <?php if (!empty($_GET['view']) && $_GET['view'] == 'all_products') include __DIR__ . '/views/all_products.views.php'; ?>
+      <?php if (!empty($_GET['view']) && $_GET['view'] == 'add_new_product') include __DIR__ . '/views/add_new_product.views.php'; ?>
+      <?php if (!empty($_GET['view']) && $_GET['view'] == 'categories') include __DIR__ . '/views/categories.views.php'; ?>
+      <?php if (!empty($_GET['view']) && $_GET['view'] == 'brands') include __DIR__ . '/views/brands.views.php'; ?>
+      <?php if (!empty($_GET['view']) && $_GET['view'] == 'units') include __DIR__ . '/views/units.views.php'; ?>
     </div>
   </div>
   </body>

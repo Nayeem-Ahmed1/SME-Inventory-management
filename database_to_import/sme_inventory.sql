@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3308
--- Generation Time: Aug 25, 2026 at 07:01 PM
+-- Generation Time: Aug 25, 2026 at 09:16 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -33,6 +33,19 @@ CREATE TABLE `brands` (
   `created_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `brands`
+--
+
+INSERT INTO `brands` (`brand_id`, `brand_name`, `created_at`) VALUES
+(1, 'Matador', '2026-08-25 17:22:48'),
+(2, 'Pilot', '2026-08-25 17:22:48'),
+(3, 'Faber-Castell', '2026-08-25 17:22:48'),
+(4, 'Double A', '2026-08-25 17:22:48'),
+(5, 'Bashundhara', '2026-08-25 17:22:48'),
+(6, 'Logitech', '2026-08-25 17:22:48'),
+(7, 'Havit', '2026-08-25 19:09:33');
+
 -- --------------------------------------------------------
 
 --
@@ -44,6 +57,18 @@ CREATE TABLE `categories` (
   `category_name` varchar(20) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `categories`
+--
+
+INSERT INTO `categories` (`category_id`, `category_name`, `created_at`) VALUES
+(1, 'Stationery', '2026-08-25 17:22:48'),
+(2, 'Paper Products', '2026-08-25 17:22:48'),
+(3, 'Office Supplies', '2026-08-25 17:22:48'),
+(4, 'Printing Supplies', '2026-08-25 17:22:48'),
+(5, 'Computer Accessories', '2026-08-25 17:22:48'),
+(6, 'Beauty', '2026-08-25 19:01:55');
 
 -- --------------------------------------------------------
 
@@ -96,6 +121,15 @@ CREATE TABLE `products` (
   `selling_price` decimal(12,2) DEFAULT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `products`
+--
+
+INSERT INTO `products` (`product_id`, `category_id`, `brand_id`, `unit_id`, `supplier_id`, `product_name`, `product_image`, `description`, `purchase_price`, `selling_price`, `created_at`) VALUES
+(5, 1, 1, 1, 2, 'Matador Ball Pen', NULL, 'Blue ink ball pen', 5.00, 8.00, '2026-08-25 17:29:44'),
+(6, 2, 4, 4, 2, 'Double A A4 Paper', NULL, '80 GSM A4 paper, 500 sheets', 480.00, 550.00, '2026-08-25 17:29:44'),
+(9, 1, 2, 1, 2, 'Permanent Marker', 'product_1787683306.jpg', 'Black permanent marker', 45.00, 60.00, '2026-08-25 18:41:46');
 
 -- --------------------------------------------------------
 
@@ -203,7 +237,11 @@ CREATE TABLE `suppliers` (
 --
 
 INSERT INTO `suppliers` (`supplier_id`, `company_name`, `contact_person`, `phone`, `email`, `address`, `payment_terms`, `created_at`) VALUES
-(2, 'Metro Stationery Ltd.', 'Rahim Uddin', '01711111117', 'metro.stationery@gmail.com', 'Motijheel, Dhaka', 'Cash', '2026-08-25 16:55:57');
+(2, 'Metro Stationery Ltd.', 'Rahim Uddin', '01711111117', 'metro.stationery@gmail.com', 'Motijheel, Dhaka', 'Cash', '2026-08-25 16:55:57'),
+(3, 'New Market Paper House', 'Tanvir Hasan', '01710000002', 'newmarketpaper@gmail.com', 'New Market, Dhaka', 'Net 15', '2026-08-25 17:24:18'),
+(4, 'Motijheel Office Supply', 'Arif Hossain', '01710000003', 'motijheeloffice@gmail.com', 'Motijheel, Dhaka', 'Cash', '2026-08-25 17:24:18'),
+(5, 'Chattogram Traders', 'Mehedi Hasan', '01710000004', 'ctgtraders@gmail.com', 'Agrabad, Chattogram', 'Net 30', '2026-08-25 17:24:18'),
+(6, 'Tech Accessories BD', 'Nafis Ahmed', '01710000005', 'techaccessoriesbd@gmail.com', 'Multiplan Center, Elephant Road, Dhaka', 'Net 15', '2026-08-25 17:24:18');
 
 -- --------------------------------------------------------
 
@@ -230,6 +268,18 @@ CREATE TABLE `units` (
   `unit_name` varchar(20) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `units`
+--
+
+INSERT INTO `units` (`unit_id`, `unit_name`, `created_at`) VALUES
+(1, 'Piece', '2026-08-25 17:22:48'),
+(2, 'Box', '2026-08-25 17:22:48'),
+(3, 'Pack', '2026-08-25 17:22:48'),
+(4, 'Ream', '2026-08-25 17:22:48'),
+(5, 'Dozen', '2026-08-25 17:22:48'),
+(6, 'Set', '2026-08-25 17:22:48');
 
 -- --------------------------------------------------------
 
@@ -426,13 +476,13 @@ ALTER TABLE `warehouse_transfers`
 -- AUTO_INCREMENT for table `brands`
 --
 ALTER TABLE `brands`
-  MODIFY `brand_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `brand_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `category_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `category_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `customers`
@@ -450,7 +500,7 @@ ALTER TABLE `inventory`
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `purchase_items`
@@ -486,7 +536,7 @@ ALTER TABLE `sales_orders`
 -- AUTO_INCREMENT for table `suppliers`
 --
 ALTER TABLE `suppliers`
-  MODIFY `supplier_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `supplier_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `transfer_items`
@@ -498,7 +548,7 @@ ALTER TABLE `transfer_items`
 -- AUTO_INCREMENT for table `units`
 --
 ALTER TABLE `units`
-  MODIFY `unit_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `unit_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `users`
