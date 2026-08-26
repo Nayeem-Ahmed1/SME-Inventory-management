@@ -41,20 +41,45 @@ if (!empty($_SESSION['user_id'])) :
 
   $keys = array_keys($sidebarArr);
 
+  $allowed_sidebar = [
+
+    'sales_manager' => [
+      'Dashboard',
+      'Sales',
+      'Customers',
+      'Log Out'
+    ],
+  ];
+
   ?>
 
   <div class="dashboard_container">
-
 
     <nav>
       <?php include __DIR__ . '/inc/navbar.inc.php' ?>
       <?php include __DIR__ . '/inc/nav_drop_down.inc.php' ?>
     </nav>
 
-
     <aside>
       <?php foreach ($keys as $key) : ?>
-        <a href="<?= !empty($_GET['aside']) && $_GET['aside'] === $key ? 'dashboard.php' : '?aside=' . $key; ?>">
+        <?php
+
+        $disabled = false;
+
+        if ($_SESSION['role_name'] != 'admin') {
+
+          if (
+            empty($allowed_sidebar[$_SESSION['role_name']]) ||
+            !in_array($key, $allowed_sidebar[$_SESSION['role_name']])
+          ) {
+
+            $disabled = true;
+          }
+        }
+        ?>
+
+        <a href="<?= !empty($_GET['aside']) && $_GET['aside'] === $key ? 'dashboard.php' : '?aside=' . $key; ?>" class="<?= $disabled ? 'disabled_link' : '' ?>">
+
           <div class="item <?= $_SESSION['active_sidebar'] === $key ? 'active' : ''; ?>">
             <div>
               <i class="<?= $sidebarArr[$key]; ?>"></i>
@@ -62,6 +87,7 @@ if (!empty($_SESSION['user_id'])) :
             </div>
             <span>></span>
           </div>
+
         </a>
       <?php endforeach; ?>
       <div class="empty_space">

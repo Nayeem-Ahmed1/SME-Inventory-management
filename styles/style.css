@@ -2075,3 +2075,14 @@ tr:nth-child(odd) {
   border-bottom: 3px solid #343435;
   transform: scaleX(1.05);
 }
+
+.disabled_link {
+  pointer-events: none;
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.disabled_item {
+  opacity: 0.35;
+  cursor: not-allowed;
+}

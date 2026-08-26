@@ -14,6 +14,8 @@ if (!empty($_SESSION['user_id'])) :
   }
 
   $result = dbQuery("SELECT * FROM users WHERE users.user_id = {$id}");
+
+  $result_role_name = dbQuery("SELECT roles.role_name from users JOIN roles ON users.role_id = roles.role_id WHERE users.user_id = {$id}");
 ?>
 
   <div class="profile_container">
@@ -38,7 +40,7 @@ if (!empty($_SESSION['user_id'])) :
       </div>
       <div class="bottom">
         <h4>Account Information :</h4>
-        <p>&emsp;&emsp; Role : <?= $_SESSION['role_name'] ?></p>
+        <p>&emsp;&emsp; Role : <?= $result_role_name[0]['role_name'] ?></p>
         <p>&emsp;&emsp; Status : <?= $result[0]['user_status'] ?> </p>
         <?php $time = strtotime($result[0]['created_at']) ?>
         <p>&emsp;&emsp; Joined Date : <?= date('d/m/y', $time) ?></p>
