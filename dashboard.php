@@ -51,6 +51,8 @@ if (!empty($_SESSION['user_id'])) :
     ],
   ];
 
+  $work_in_progress = ['Purchases'];
+
   ?>
 
   <div class="dashboard_container">
@@ -72,6 +74,11 @@ if (!empty($_SESSION['user_id'])) :
             empty($allowed_sidebar[$_SESSION['role_name']]) ||
             !in_array($key, $allowed_sidebar[$_SESSION['role_name']])
           ) {
+
+            $disabled = true;
+          }
+        } else {
+          if (in_array($key, $work_in_progress)) {
 
             $disabled = true;
           }
