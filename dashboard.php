@@ -92,6 +92,11 @@ if (!empty($_SESSION['user_id'])) :
       <?php if (!empty($_GET['view']) && $_GET['view'] == 'units') include __DIR__ . '/views/units.views.php'; ?>
       <?php if (!empty($_GET['view']) && $_GET['view'] == 'all_warehouses') include __DIR__ . '/views/all_warehouses.views.php'; ?>
       <?php if (!empty($_GET['view']) && $_GET['view'] == 'add_warehouse') include __DIR__ . '/views/add_new_warehouse.views.php'; ?>
+      <?php if (!empty($_GET['view']) && $_GET['view'] == 'add_stock') include __DIR__ . '/views/add_stock.views.php'; ?>
+      <?php if (!empty($_GET['view']) && $_GET['view'] == 'current_stocks') include __DIR__ . '/views/current_stocks.views.php'; ?>
+      <?php if (!empty($_GET['view']) && $_GET['view'] == 'low_stock') include __DIR__ . '/views/low_stock.views.php'; ?>
+      <?php if (!empty($_GET['view']) && $_GET['view'] == 'damaged_stock') include __DIR__ . '/views/damaged_stock.views.php'; ?>
+      <?php if (!empty($_GET['view']) && $_GET['view'] == 'out_of_stock') include __DIR__ . '/views/out_of_stock.views.php'; ?>
     </div>
   </div>
   </body>
