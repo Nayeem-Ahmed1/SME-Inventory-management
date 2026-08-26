@@ -90,6 +90,8 @@ if (!empty($_SESSION['user_id'])) :
       <?php if (!empty($_GET['view']) && $_GET['view'] == 'categories') include __DIR__ . '/views/categories.views.php'; ?>
       <?php if (!empty($_GET['view']) && $_GET['view'] == 'brands') include __DIR__ . '/views/brands.views.php'; ?>
       <?php if (!empty($_GET['view']) && $_GET['view'] == 'units') include __DIR__ . '/views/units.views.php'; ?>
+      <?php if (!empty($_GET['view']) && $_GET['view'] == 'all_warehouses') include __DIR__ . '/views/all_warehouses.views.php'; ?>
+      <?php if (!empty($_GET['view']) && $_GET['view'] == 'add_warehouse') include __DIR__ . '/views/add_new_warehouse.views.php'; ?>
     </div>
   </div>
   </body>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3308
--- Generation Time: Aug 25, 2026 at 09:16 PM
+-- Generation Time: Aug 26, 2026 at 10:27 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -323,6 +323,14 @@ CREATE TABLE `warehouses` (
   `created_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `warehouses`
+--
+
+INSERT INTO `warehouses` (`warehouse_id`, `warehouse_name`, `location`, `created_at`) VALUES
+(1, 'Dhaka Central Warehouse', 'Tejgaon, Dhaka', '2026-08-26 08:19:46'),
+(2, 'Gazipur Warehouse', 'Tongi, Gazipur', '2026-08-26 08:20:13');
+
 -- --------------------------------------------------------
 
 --
@@ -560,7 +568,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `warehouses`
 --
 ALTER TABLE `warehouses`
-  MODIFY `warehouse_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `warehouse_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `warehouse_transfers`
