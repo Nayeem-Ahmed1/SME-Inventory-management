@@ -105,6 +105,12 @@ body {
 .dashboard_container .main {
   grid-area: ma;
   background-color: #edf3fc;
+
+  overflow-y: auto;
+  overflow-x: auto;
+
+  min-width: 0;
+  min-height: 0;
 }
 
 .dashboard_container {
