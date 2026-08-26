@@ -100,6 +100,14 @@ if (!empty($_SESSION['user_id'])) :
       <?php if (!empty($_GET['view']) && $_GET['view'] == 'all_customers') include __DIR__ . '/views/all_customers.views.php'; ?>
       <?php if (!empty($_GET['view']) && $_GET['view'] == 'add_customer') include __DIR__ . '/views/add_customer.views.php'; ?>
       <?php if (!empty($_GET['view']) && $_GET['view'] == 'customer_orders') include __DIR__ . '/views/customer_orders.views.php'; ?>
+      <?php if (!empty($_GET['view']) && $_GET['view'] == 'new_order') include __DIR__ . '/views/new_order.views.php'; ?>
+      <?php if (!empty($_GET['view']) && $_GET['view'] == 'add_order_items') include __DIR__ . '/views/add_order_items.views.php'; ?>
+      <?php if (!empty($_GET['view']) && $_GET['view'] == 'orders') include __DIR__ . '/views/orders.views.php'; ?>
+      <?php if (!empty($_GET['view']) && $_GET['view'] == 'invoices') include __DIR__ . '/views/invoices.views.php'; ?>
+      <?php if (!empty($_GET['view']) && $_GET['view'] == 'transfers') include __DIR__ . '/views/transfers.views.php'; ?>
+      <?php if (!empty($_GET['aside']) && $_GET['aside'] == 'Roles') include __DIR__ . '/views/roles.views.php'; ?>
+      <?php if (!empty($_GET['aside']) && $_GET['aside'] == 'Dashboard') include __DIR__ . '/views/dashboard_home.views.php'; ?>
+      <?php if ((empty($_GET['aside'])) && (empty($_GET['view']))) include __DIR__ . '/views/dashboard_home.views.php'; ?>
     </div>
   </div>
   </body>

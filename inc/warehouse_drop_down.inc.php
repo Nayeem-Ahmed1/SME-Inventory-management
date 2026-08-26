@@ -4,7 +4,7 @@ if (!empty($_GET['aside']) && $_GET['aside'] === 'Warehouse') :
   $wh_drop_down_arr = [
     'All Warehouses' => 'all_warehouses',
     'Add New' => 'add_warehouse',
-    'Transfers' => '',
+    'Transfers' => 'transfers',
   ];
 
   $wh_drop_down_keys = array_keys($wh_drop_down_arr);

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3308
--- Generation Time: Aug 26, 2026 at 12:45 PM
+-- Generation Time: Aug 26, 2026 at 05:23 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -86,6 +86,13 @@ CREATE TABLE `customers` (
   `created_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `customers`
+--
+
+INSERT INTO `customers` (`customer_id`, `customer_name`, `phone`, `email`, `address`, `outstanding_money`, `created_at`) VALUES
+(1, 'Rahim Enterprise', '01711111111', 'rahim@gmail.com', 'Savar,Dhaka', 0.00, '2026-08-26 11:06:32');
+
 -- --------------------------------------------------------
 
 --
@@ -107,7 +114,8 @@ CREATE TABLE `inventory` (
 --
 
 INSERT INTO `inventory` (`inventory_id`, `warehouse_id`, `product_id`, `current_stock`, `reserved_stock`, `damaged_stock`, `created_at`) VALUES
-(1, 1, 5, 100, 0, 2, '2026-08-26 09:47:21');
+(1, 1, 5, 94, 0, 2, '2026-08-26 09:47:21'),
+(2, 2, 5, 1, 0, 0, '2026-08-26 14:53:14');
 
 -- --------------------------------------------------------
 
@@ -207,6 +215,13 @@ CREATE TABLE `sales_items` (
   `created_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `sales_items`
+--
+
+INSERT INTO `sales_items` (`sale_item_id`, `sale_id`, `product_id`, `quantity`, `selling_price`, `subtotal`, `created_at`) VALUES
+(1, 2, 5, 5, 8.00, 40.00, '2026-08-26 12:14:53');
+
 -- --------------------------------------------------------
 
 --
@@ -216,11 +231,21 @@ CREATE TABLE `sales_items` (
 CREATE TABLE `sales_orders` (
   `sale_id` int(11) NOT NULL,
   `customer_id` int(11) NOT NULL,
+  `warehouse_id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
   `sale_date` date DEFAULT curdate(),
   `total_amount` decimal(12,2) DEFAULT NULL,
+  `order_status` enum('pending','confirmed','cancelled') NOT NULL DEFAULT 'pending',
   `created_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `sales_orders`
+--
+
+INSERT INTO `sales_orders` (`sale_id`, `customer_id`, `warehouse_id`, `user_id`, `sale_date`, `total_amount`, `order_status`, `created_at`) VALUES
+(1, 1, 1, 1, '2026-08-26', 0.00, 'pending', '2026-08-26 12:04:34'),
+(2, 1, 1, 1, '2026-08-26', 40.00, 'confirmed', '2026-08-26 12:14:32');
 
 -- --------------------------------------------------------
 
@@ -263,6 +288,13 @@ CREATE TABLE `transfer_items` (
   `quantity` int(11) DEFAULT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `transfer_items`
+--
+
+INSERT INTO `transfer_items` (`transfer_item_id`, `transfer_id`, `product_id`, `quantity`, `created_at`) VALUES
+(1, 1, 5, 1, '2026-08-26 14:53:14');
 
 -- --------------------------------------------------------
 
@@ -354,6 +386,13 @@ CREATE TABLE `warehouse_transfers` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
+-- Dumping data for table `warehouse_transfers`
+--
+
+INSERT INTO `warehouse_transfers` (`transfer_id`, `from_warehouse`, `to_warehouse`, `transfer_date`, `user_id`, `created_at`) VALUES
+(1, 1, 2, '2026-08-26', 1, '2026-08-26 14:53:14');
+
+--
 -- Indexes for dumped tables
 --
 
@@ -434,7 +473,8 @@ ALTER TABLE `sales_items`
 ALTER TABLE `sales_orders`
   ADD PRIMARY KEY (`sale_id`),
   ADD KEY `customer_id` (`customer_id`),
-  ADD KEY `user_id` (`user_id`);
+  ADD KEY `user_id` (`user_id`),
+  ADD KEY `warehouse_id` (`warehouse_id`);
 
 --
 -- Indexes for table `suppliers`
@@ -503,13 +543,13 @@ ALTER TABLE `categories`
 -- AUTO_INCREMENT for table `customers`
 --
 ALTER TABLE `customers`
-  MODIFY `customer_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `customer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `inventory`
 --
 ALTER TABLE `inventory`
-  MODIFY `inventory_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `inventory_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `products`
@@ -539,13 +579,13 @@ ALTER TABLE `roles`
 -- AUTO_INCREMENT for table `sales_items`
 --
 ALTER TABLE `sales_items`
-  MODIFY `sale_item_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `sale_item_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `sales_orders`
 --
 ALTER TABLE `sales_orders`
-  MODIFY `sale_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `sale_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `suppliers`
@@ -557,7 +597,7 @@ ALTER TABLE `suppliers`
 -- AUTO_INCREMENT for table `transfer_items`
 --
 ALTER TABLE `transfer_items`
-  MODIFY `transfer_item_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `transfer_item_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `units`
@@ -581,7 +621,7 @@ ALTER TABLE `warehouses`
 -- AUTO_INCREMENT for table `warehouse_transfers`
 --
 ALTER TABLE `warehouse_transfers`
-  MODIFY `transfer_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `transfer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Constraints for dumped tables
@@ -629,7 +669,8 @@ ALTER TABLE `sales_items`
 --
 ALTER TABLE `sales_orders`
   ADD CONSTRAINT `sales_orders_ibfk_1` FOREIGN KEY (`customer_id`) REFERENCES `customers` (`customer_id`),
-  ADD CONSTRAINT `sales_orders_ibfk_2` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`);
+  ADD CONSTRAINT `sales_orders_ibfk_2` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`),
+  ADD CONSTRAINT `sales_orders_ibfk_3` FOREIGN KEY (`warehouse_id`) REFERENCES `warehouses` (`warehouse_id`);
 
 --
 -- Constraints for table `transfer_items`
