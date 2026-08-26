@@ -97,6 +97,9 @@ if (!empty($_SESSION['user_id'])) :
       <?php if (!empty($_GET['view']) && $_GET['view'] == 'low_stock') include __DIR__ . '/views/low_stock.views.php'; ?>
       <?php if (!empty($_GET['view']) && $_GET['view'] == 'damaged_stock') include __DIR__ . '/views/damaged_stock.views.php'; ?>
       <?php if (!empty($_GET['view']) && $_GET['view'] == 'out_of_stock') include __DIR__ . '/views/out_of_stock.views.php'; ?>
+      <?php if (!empty($_GET['view']) && $_GET['view'] == 'all_customers') include __DIR__ . '/views/all_customers.views.php'; ?>
+      <?php if (!empty($_GET['view']) && $_GET['view'] == 'add_customer') include __DIR__ . '/views/add_customer.views.php'; ?>
+      <?php if (!empty($_GET['view']) && $_GET['view'] == 'customer_orders') include __DIR__ . '/views/customer_orders.views.php'; ?>
     </div>
   </div>
   </body>
