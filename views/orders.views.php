@@ -3,17 +3,40 @@
     Sales Orders
   </div>
 
+  <form action="dashboard.php?view=orders" method="POST" class="searchNameForm">
+    <label for="search">Search Customer Name</label>
+    <input type="text" placeholder="Enter to Search" name="search">
+  </form>
+
   <?php
 
-  $orders = dbQuery("SELECT sales_orders.*, customers.customer_name, warehouses.warehouse_name, users.full_name
-  FROM sales_orders
-  JOIN customers
-  ON sales_orders.customer_id = customers.customer_id
-  JOIN warehouses
-  ON sales_orders.warehouse_id = warehouses.warehouse_id
-  JOIN users
-  ON sales_orders.user_id = users.user_id
-  ORDER BY sales_orders.sale_id DESC ");
+  if (!empty($_POST['search'])) {
+
+    $data = '%' . $_POST['search'] . '%';
+
+    $orders = dbQuery("SELECT sales_orders.*, customers.customer_name, warehouses.warehouse_name, users.full_name
+    FROM sales_orders
+    JOIN customers
+    ON sales_orders.customer_id = customers.customer_id
+    JOIN warehouses
+    ON sales_orders.warehouse_id = warehouses.warehouse_id
+    JOIN users
+    ON sales_orders.user_id = users.user_id
+    WHERE customers.customer_name LIKE '{$data}'
+    ORDER BY sales_orders.sale_id DESC ");
+  } else {
+
+    $orders = dbQuery("SELECT sales_orders.*, customers.customer_name, warehouses.warehouse_name, users.full_name
+    FROM sales_orders
+    JOIN customers
+    ON sales_orders.customer_id = customers.customer_id
+    JOIN warehouses
+    ON sales_orders.warehouse_id = warehouses.warehouse_id
+    JOIN users
+    ON sales_orders.user_id = users.user_id
+    ORDER BY sales_orders.sale_id DESC ");
+  }
+
   ?>
 
   <table>

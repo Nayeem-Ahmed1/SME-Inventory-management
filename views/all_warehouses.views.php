@@ -3,6 +3,11 @@
     All Warehouses List
   </div>
 
+  <form action="dashboard.php?view=all_warehouses" method="POST" class="searchNameForm">
+    <label for="search">Search by Name</label>
+    <input type="text" placeholder="Enter to Search" name="search">
+  </form>
+
   <table>
     <tr>
       <th>Serial</th>
@@ -13,9 +18,21 @@
     </tr>
 
     <?php
-    $results = dbQuery(
-      "SELECT * FROM warehouses ORDER BY warehouse_id DESC"
-    );
+
+    if (!empty($_POST['search'])) {
+
+      $data = '%' . $_POST['search'] . '%';
+
+      $results = dbQuery(
+        "SELECT * FROM warehouses WHERE warehouses.warehouse_name LIKE '{$data}' ORDER BY warehouse_id DESC"
+      );
+    } else {
+
+      $results = dbQuery(
+        "SELECT * FROM warehouses ORDER BY warehouse_id DESC"
+      );
+    }
+
     ?>
     <?php if (!empty($results)) : ?>
       <?php for ($i = 0; $i < count($results); $i++) : ?>

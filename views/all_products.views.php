@@ -3,6 +3,11 @@
     All Products List
   </div>
 
+  <form action="dashboard.php?view=all_products" method="POST" class="searchNameForm">
+    <label for="search">Search by Product Name</label>
+    <input type="text" placeholder="Enter to Search" name="search">
+  </form>
+
   <table>
     <tr>
       <th>Serial</th>
@@ -17,7 +22,24 @@
       <th>Actions</th>
     </tr>
     <?php
-    $results = dbQuery(" SELECT products.*, categories.category_name, brands.brand_name, units.unit_name, suppliers.company_name
+
+    if (!empty($_POST['search'])) {
+
+      $data = '%' . $_POST['search'] . '%';
+
+      $results = dbQuery(" SELECT products.*, categories.category_name, brands.brand_name, units.unit_name, suppliers.company_name
+      FROM products
+      JOIN categories
+        ON products.category_id = categories.category_id
+      JOIN brands
+        ON products.brand_id = brands.brand_id
+      JOIN units
+        ON products.unit_id = units.unit_id
+      JOIN suppliers
+        ON products.supplier_id = suppliers.supplier_id WHERE products.product_name LIKE '{$data}'");
+    } else {
+
+      $results = dbQuery(" SELECT products.*, categories.category_name, brands.brand_name, units.unit_name, suppliers.company_name
       FROM products
       JOIN categories
         ON products.category_id = categories.category_id
@@ -27,6 +49,9 @@
         ON products.unit_id = units.unit_id
       JOIN suppliers
         ON products.supplier_id = suppliers.supplier_id");
+    }
+
+
 
     for ($i = 1; $i <= count($results); $i++) :
       $product = $results[$i - 1];

@@ -127,10 +127,7 @@ LIMIT 5
               <?= $order['sale_date'] ?>
             </td>
             <td>
-              ৳<?= number_format(
-                  (float) $order['total_amount'],
-                  2
-                ) ?>
+              ৳<?= number_format((float) $order['total_amount'], 2) ?>
             </td>
             <td>
               <?= ucfirst($order['order_status']) ?>

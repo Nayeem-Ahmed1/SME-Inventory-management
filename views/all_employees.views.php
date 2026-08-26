@@ -4,6 +4,11 @@
     All Employees List
   </div>
 
+  <form action="dashboard.php?view=all_employees" method="POST" class="searchNameForm">
+    <label for="search">Search by Name</label>
+    <input type="text" placeholder="Enter to Search" name="search">
+  </form>
+
   <table>
     <tr>
       <th>Serial</th>
@@ -16,7 +21,15 @@
     </tr>
     <?php
 
-    $results = dbQuery(" SELECT users.*, roles.role_name FROM users JOIN roles ON users.role_id = roles.role_id WHERE roles.role_name != 'admin' ");
+    if (!empty($_POST['search'])) {
+
+      $data = '%' . $_POST['search'] . '%';
+
+      $results = dbQuery(" SELECT users.*, roles.role_name FROM users JOIN roles ON users.role_id = roles.role_id WHERE roles.role_name != 'admin' AND users.full_name LIKE '{$data}'");
+    } else {
+
+      $results = dbQuery(" SELECT users.*, roles.role_name FROM users JOIN roles ON users.role_id = roles.role_id WHERE roles.role_name != 'admin' ");
+    }
 
     for ($i = 1; $i <= count($results); $i++) :
     ?>

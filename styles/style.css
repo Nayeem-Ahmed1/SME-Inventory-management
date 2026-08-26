@@ -2044,3 +2044,34 @@ tr:nth-child(odd) {
   text-align: center;
   padding: 10px 15px;
 }
+
+/* Searching */
+
+.main .all_container .searchNameForm {
+  width: 90%;
+  padding-bottom: 1rem;
+  display: flex;
+  gap: 1.4rem;
+  align-items: center;
+  justify-content: end;
+  margin: auto;
+}
+
+.main .all_container .searchNameForm input {
+  outline: none;
+  padding: 5px;
+  font-size: medium;
+  width: 14rem;
+  border: 2px solid rgb(199, 198, 198);
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  font-family: "Roboto Mono", monospace;
+  transition-duration: 0.3s;
+  background-color: #edf3fc;
+}
+
+.main .all_container .searchNameForm input:focus {
+  border-bottom: 3px solid #343435;
+  transform: scaleX(1.05);
+}

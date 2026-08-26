@@ -3,6 +3,11 @@
     All Suppliers List
   </div>
 
+  <form action="dashboard.php?view=all_suppliers" method="POST" class="searchNameForm">
+    <label for="search">Search by Company</label>
+    <input type="text" placeholder="Enter to Search" name="search">
+  </form>
+
   <table>
 
     <tr>
@@ -15,7 +20,16 @@
       <th>Actions</th>
     </tr>
     <?php
-    $results = dbQuery("SELECT * FROM suppliers");
+
+    if (!empty($_POST['search'])) {
+
+      $data = '%' . $_POST['search'] . '%';
+
+      $results = dbQuery("SELECT * FROM suppliers WHERE suppliers.company_name LIKE '{$data}'");
+    } else {
+
+      $results = dbQuery("SELECT * FROM suppliers");
+    }
 
     for ($i = 1; $i <= count($results); $i++) :
     ?>
